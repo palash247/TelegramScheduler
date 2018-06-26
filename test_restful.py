@@ -3,6 +3,7 @@ from flask_jwt import JWT, jwt_required
 from flask_restful import Api, Resource, reqparse
 from security import authenticate, identity
 from resourcess.group import Group, GroupList
+from resourcess.message import Message, MessageList
 
 app = Flask(__name__)
 app.secret_key = 'palash'
@@ -19,8 +20,10 @@ def create_tables():
 
 JWT(app, authenticate, identity)
 
-api.add_resource(Group, '/group/<string:name>')
+api.add_resource(Group, '/group/<int:chat_id>')
 api.add_resource(GroupList, '/groups')
+api.add_resource(Message, '/group/<int:chat_id>/message/<string:name>')
+api.add_resource(MessageList, '/group/<int:chat_id>/messages')
 
 if __name__ == '__main__':
     from db import db
