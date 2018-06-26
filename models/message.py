@@ -12,7 +12,7 @@ class MessageModel(db.Model):
 
     group_id = db.Column(db.Integer, db.ForeignKey('groups.id'))
     group = db.relationship('GroupModel')
-
+    db.UniqueConstraint('name', 'group_id')
     def __init__(self, name, text, schedule, group_id):
         self.name = name
         self.text = text
@@ -23,8 +23,12 @@ class MessageModel(db.Model):
         return {'name': self.name, 'text': self.text, 'schedule': self.schedule}
 
     @classmethod
-    def find_by_name(cls, name, group_id):
+    def find_by_name_and_group(cls, name, group_id):
         return cls.query.filter_by(name=name, group_id=group_id).first()
+
+    @classmethod
+    def find_by_group_id(cls, group_id):
+        return cls.query.filter_by(group_id=group_id)
 
     def save_to_db(self):
         db.session.add(self)
