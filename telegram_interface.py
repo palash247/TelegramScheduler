@@ -1,36 +1,47 @@
-from telegram.ext import Updater, CommandHandler
 import sqlite3
 import logging
+import json
+import requests
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger()
+
 TOKEN = "593812672:AAE_77FAMjFoISjwvsWt_XSy5MkMQ8Smsvs"
-connection = sqlite3.connect('surveyor.db')
+URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
-def start(bot, update):
-    logger.info(update.message.chat.title)
-    update.message.reply_text(
-        "I'm a bot, Nice to meet you!")
+def get_url(url):
+    response = requests.get(url)
+    content = response.content.decode("utf8")
+    return content
 
 
-def main():
-    # Create Updater object and attach dispatcher to it
-    updater = Updater(TOKEN)
-    dispatcher = updater.dispatcher
-    logger.info("Bot started")
-    # Add command handler to dispatcher
-    start_handler = CommandHandler('start', start)
-    dispatcher.add_handler(start_handler)
-
-    # Start the bot
-    updater.start_polling()
-
-    # Run the bot until you press Ctrl-C
-    updater.idle()
+def get_json_from_url(url):
+    content = get_url(url)
+    js = json.loads(content)
+    return js
 
 
-if __name__ == '__main__':
-    main()
+def get_updates():
+    url = URL + "getUpdates"
+    js = get_json_from_url(url)
+    return js
+
+
+def get_last_chat_id_and_text(updates):
+    num_updates = len(updates["result"])
+    last_update = num_updates - 1
+    text = updates["result"][last_update]["message"]["text"]
+    chat_id = updates["result"][last_update]["message"]["chat"]["id"]
+    return (text, chat_id)
+
+
+def send_message(text, chat_id):
+    url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
+    get_url(url)
+
+
+text, chat = get_last_chat_id_and_text(get_updates())
+send_message(text, chat)
