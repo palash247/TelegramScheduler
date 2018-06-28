@@ -1,0 +1,628 @@
+2018-06-28 12:36:53,029 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:36:53,032 - root - INFO - Scheduler started successfully.
+2018-06-28 12:36:53,295 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-06-28 12:36:53,299 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:36:55,277 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:36:55,279 - root - INFO - Scheduler started successfully.
+2018-06-28 12:36:55,507 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:36:55,509 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:37:28,898 - root - INFO - Group added to database
+2018-06-28 12:37:28,900 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:37:28] "POST /593812672:AAE_77FAMjFoISjwvsWt_XSy5MkMQ8Smsvs HTTP/1.1" 200 -
+2018-06-28 12:38:42,590 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:38:42] "GET /groups HTTP/1.1" 200 -
+2018-06-28 12:43:25,691 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:43:25] "POST /group/-287606125/message/demo_message HTTP/1.1" 404 -
+2018-06-28 12:45:45,511 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:45:45] "POST /group/-287606125/message/demo_message HTTP/1.1" 404 -
+2018-06-28 12:46:24,515 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:46:24] "POST /group/-287606125/message/demo_message HTTP/1.1" 404 -
+2018-06-28 12:48:43,511 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 12:48:43,704 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:48:45,812 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:48:45,815 - root - INFO - Scheduler started successfully.
+2018-06-28 12:48:46,081 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:48:46,083 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:49:11,788 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:49:11] "POST /group/-287606125/message/rasa HTTP/1.1" 404 -
+2018-06-28 12:50:33,670 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:50:33] "POST /group/-287606125/message/sdf HTTP/1.1" 404 -
+2018-06-28 12:51:20,992 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:51:20] "POST /group/-287606125/message/sdf HTTP/1.1" 404 -
+2018-06-28 12:51:42,199 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:51:42] "GET /group/-287606125 HTTP/1.1" 404 -
+2018-06-28 12:52:09,850 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:52:09] "GET /group/287606125 HTTP/1.1" 200 -
+2018-06-28 12:55:14,125 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/app.py', reloading
+2018-06-28 12:55:14,363 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:55:16,928 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:55:16,941 - root - INFO - Scheduler started successfully.
+2018-06-28 12:55:17,362 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:55:17,367 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:55:34,334 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:55:34,341 - root - INFO - Scheduler started successfully.
+2018-06-28 12:55:34,746 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-06-28 12:55:34,754 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:55:37,169 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:55:37,172 - root - INFO - Scheduler started successfully.
+2018-06-28 12:55:37,455 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:55:37,457 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:55:52,078 - root - INFO - Received schedule hello world for message 2018-06-28 12:44:05
+2018-06-28 12:55:52,094 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:55:52] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 12:58:18,096 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 12:58:18,338 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:58:20,428 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:58:20,431 - root - INFO - Scheduler started successfully.
+2018-06-28 12:58:20,708 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:58:20,710 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:58:34,204 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 12:58:34,395 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:58:36,591 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:58:36,594 - root - INFO - Scheduler started successfully.
+2018-06-28 12:58:36,855 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:58:36,856 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:59:11,795 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 12:59:12,034 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:59:14,248 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:59:14,251 - root - INFO - Scheduler started successfully.
+2018-06-28 12:59:14,501 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:59:14,503 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:59:17,600 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 12:59:17,803 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:59:20,386 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:59:20,393 - root - INFO - Scheduler started successfully.
+2018-06-28 12:59:20,726 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:59:20,728 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:59:26,061 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:59:26,067 - root - INFO - Scheduler started successfully.
+2018-06-28 12:59:26,348 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-06-28 12:59:26,351 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 12:59:28,771 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 12:59:28,777 - root - INFO - Scheduler started successfully.
+2018-06-28 12:59:29,056 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 12:59:29,059 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 12:59:33,292 - root - INFO - Received schedule hello world for message 2018-06-28 12:44:05
+2018-06-28 12:59:33,375 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 12:59:33] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 13:00:12,389 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 13:00:12,589 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 13:00:14,881 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 13:00:14,884 - root - INFO - Scheduler started successfully.
+2018-06-28 13:00:15,201 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 13:00:15,203 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 13:01:27,270 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 13:01:27,501 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 13:01:29,952 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 13:01:29,961 - root - INFO - Scheduler started successfully.
+2018-06-28 13:01:30,336 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 13:01:30,338 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 13:01:34,515 - root - INFO - Received schedule hello world for message 2018-06-28 12:44:05
+2018-06-28 13:01:34,652 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 13:01:34,670 - apscheduler.executors.default - WARNING - Run time of job "Update.send_message (trigger: date[2018-06-28 12:44:05 IST], next run at: 2018-06-28 12:44:05 IST)" was missed by 0:17:29.670376
+2018-06-28 13:01:34,784 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 13:01:34] "POST /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 13:01:34,907 - apscheduler.scheduler - INFO - Removed job 8b573637357e42ed906f62a5061874e3
+2018-06-28 13:01:46,977 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 13:01:47,229 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 13:01:49,615 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 13:01:49,618 - root - INFO - Scheduler started successfully.
+2018-06-28 13:01:49,874 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 13:01:49,876 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 13:02:27,193 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 13:02:27] "GET /group/-287606125/message HTTP/1.1" 404 -
+2018-06-28 13:02:34,210 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 13:02:34] "GET /group/-287606125/messages HTTP/1.1" 500 -
+2018-06-28 13:04:23,168 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 13:04:23,432 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 13:04:25,866 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 13:04:25,884 - root - INFO - Scheduler started successfully.
+2018-06-28 13:04:26,326 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 13:04:26,333 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 13:04:29,903 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 13:04:29] "GET /group/-287606125/messages HTTP/1.1" 200 -
+2018-06-28 14:21:36,890 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:21:36,901 - root - INFO - Scheduler started successfully.
+2018-06-28 14:21:37,585 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-06-28 14:21:37,600 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:21:38,113 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:21:38,114 - root - INFO - Scheduler started successfully.
+2018-06-28 14:21:38,177 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:21:38,204 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:22:09,444 - root - INFO - Received schedule hello world for message 2018-06-28 12:44:05
+2018-06-28 14:22:09,446 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 14:22:09] "POST /group/-287606125/message/sdf HTTP/1.1" 402 -
+2018-06-28 14:22:29,109 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 14:22:29,192 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:22:29,755 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:22:29,756 - root - INFO - Scheduler started successfully.
+2018-06-28 14:22:29,825 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:22:29,825 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:22:36,733 - root - INFO - Received schedule hello world for message 2018-06-28 12:44:05
+2018-06-28 14:22:36,734 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 14:22:36] "POST /group/-287606125/message/sdf HTTP/1.1" 400 -
+2018-06-28 14:23:02,576 - root - INFO - Received schedule hello world for message 2018-06-28 14:24:05
+2018-06-28 14:23:02,713 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 14:23:02,835 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 14:23:02] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 14:24:05,007 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 14:24:05 IST], next run at: 2018-06-28 14:24:05 IST)" (scheduled at 2018-06-28 14:24:05+05:30)
+2018-06-28 14:24:05,018 - apscheduler.executors.default - ERROR - Job "Update.send_message (trigger: date[2018-06-28 14:24:05 IST], next run at: 2018-06-28 14:24:05 IST)" raised an exception
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/palash/git/Suveyor/resourcess/update.py", line 129, in send_message
+    self.get_url(url)
+NameError: name 'self' is not defined
+2018-06-28 14:24:05,114 - apscheduler.scheduler - INFO - Removed job 9226ef9c15a44ab08bb81790b64e2181
+2018-06-28 14:26:14,610 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 14:26:14,722 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:26:15,424 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:26:15,426 - root - INFO - Scheduler started successfully.
+2018-06-28 14:26:15,555 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:26:15,556 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:26:42,070 - root - INFO - Received schedule hello world for message 2018-06-28 14:28:05
+2018-06-28 14:26:42,194 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 14:26:42,295 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 14:26:42] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 14:28:05,113 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 14:28:05 IST], next run at: 2018-06-28 14:28:05 IST)" (scheduled at 2018-06-28 14:28:05+05:30)
+2018-06-28 14:28:05,230 - apscheduler.scheduler - INFO - Removed job bb4057c40a7c4c2194f26fbe56c93efc
+2018-06-28 14:28:06,806 - apscheduler.executors.default - INFO - Job "Update.send_message (trigger: date[2018-06-28 14:28:05 IST], next run at: 2018-06-28 14:28:05 IST)" executed successfully
+2018-06-28 14:46:42,778 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 14:46:42,865 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:46:43,718 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:46:43,721 - root - INFO - Scheduler started successfully.
+2018-06-28 14:46:43,799 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:46:43,799 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:49:44,004 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 14:49:44,105 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:49:44,686 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:49:44,688 - root - INFO - Scheduler started successfully.
+2018-06-28 14:49:44,770 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:49:44,770 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:49:50,869 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 14:49:50,972 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:49:51,559 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:49:51,560 - root - INFO - Scheduler started successfully.
+2018-06-28 14:49:51,631 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:49:51,631 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:52:16,170 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 14:52:16,249 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:52:16,863 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:52:16,866 - root - INFO - Scheduler started successfully.
+2018-06-28 14:52:16,945 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:52:16,946 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:52:33,217 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 14:52:33,293 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:52:33,939 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:52:33,940 - root - INFO - Scheduler started successfully.
+2018-06-28 14:52:34,026 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:52:34,026 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:55:16,745 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 14:55:16,822 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:55:17,424 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:55:17,425 - root - INFO - Scheduler started successfully.
+2018-06-28 14:55:17,514 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:55:17,515 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:55:36,876 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 14:55:36,969 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 14:55:37,609 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 14:55:37,610 - root - INFO - Scheduler started successfully.
+2018-06-28 14:55:37,680 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 14:55:37,681 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 14:55:58,003 - root - WARNING - Delete executed on a group which does not exist in the database.
+2018-06-28 14:55:58,004 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 14:55:58] "POST /593812672:AAE_77FAMjFoISjwvsWt_XSy5MkMQ8Smsvs HTTP/1.1" 200 -
+2018-06-28 14:56:51,968 - root - INFO - Group added to database
+2018-06-28 14:56:51,969 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 14:56:51] "POST /593812672:AAE_77FAMjFoISjwvsWt_XSy5MkMQ8Smsvs HTTP/1.1" 200 -
+2018-06-28 14:57:09,329 - root - INFO - Received schedule hello world for message 2018-06-28 14:58:05
+2018-06-28 14:57:09,436 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 14:57:09,541 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 14:57:09] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 14:58:05,110 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 14:58:05 IST], next run at: 2018-06-28 14:58:05 IST)" (scheduled at 2018-06-28 14:58:05+05:30)
+2018-06-28 14:58:05,206 - apscheduler.scheduler - INFO - Removed job 61961a30e86f42cb92d3166151be858a
+2018-06-28 14:58:07,084 - apscheduler.executors.default - INFO - Job "Update.send_message (trigger: date[2018-06-28 14:58:05 IST], next run at: 2018-06-28 14:58:05 IST)" executed successfully
+2018-06-28 15:02:10,585 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 15:02:10,663 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:02:11,205 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:02:11,206 - root - INFO - Scheduler started successfully.
+2018-06-28 15:02:24,307 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:02:24,308 - root - INFO - Scheduler started successfully.
+2018-06-28 15:02:24,392 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-06-28 15:02:24,393 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:02:25,027 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:02:25,029 - root - INFO - Scheduler started successfully.
+2018-06-28 15:02:25,119 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:02:25,120 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:02:46,313 - root - INFO - Received schedule hello world for message 2018-06-28 15:3:05
+2018-06-28 15:02:46,383 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 15:02:46,477 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:02:46] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 15:03:05,113 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 15:03:05 IST], next run at: 2018-06-28 15:03:05 IST)" (scheduled at 2018-06-28 15:03:05+05:30)
+2018-06-28 15:03:05,196 - apscheduler.scheduler - INFO - Removed job 07bea0aad39c4f87abd376cfc716a498
+2018-06-28 15:03:06,865 - apscheduler.executors.default - INFO - Job "Update.send_message (trigger: date[2018-06-28 15:03:05 IST], next run at: 2018-06-28 15:03:05 IST)" executed successfully
+2018-06-28 15:03:49,275 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:03:49] "GET /group/-287606125/messages HTTP/1.1" 200 -
+2018-06-28 15:05:08,363 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:05:08] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:05:18,672 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:05:18] "GET /group/-287606125/messages HTTP/1.1" 200 -
+2018-06-28 15:05:24,653 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:05:24] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:05:28,870 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:05:28] "GET /group/-287606125/messages HTTP/1.1" 200 -
+2018-06-28 15:06:12,292 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 15:06:12,369 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:06:13,017 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:06:13,019 - root - INFO - Scheduler started successfully.
+2018-06-28 15:06:13,107 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:06:13,108 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:06:59,237 - root - INFO - Received schedule hello world for message 2018-06-28 15:7:05
+2018-06-28 15:06:59,326 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 15:06:59,430 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:06:59] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 15:07:05,112 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 15:07:05 IST], next run at: 2018-06-28 15:07:05 IST)" (scheduled at 2018-06-28 15:07:05+05:30)
+2018-06-28 15:07:05,270 - apscheduler.scheduler - INFO - Removed job 6b6216f624984d029b9408907ce38c9c
+2018-06-28 15:07:07,076 - apscheduler.executors.default - INFO - Job "Update.send_message (trigger: date[2018-06-28 15:07:05 IST], next run at: 2018-06-28 15:07:05 IST)" executed successfully
+2018-06-28 15:19:15,266 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:19:15,345 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:19:15,920 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:19:15,920 - root - INFO - Scheduler started successfully.
+2018-06-28 15:19:15,996 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:19:15,997 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:19:30,275 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:19:30,374 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:19:30,900 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:19:30,901 - root - INFO - Scheduler started successfully.
+2018-06-28 15:19:30,966 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:19:30,967 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:19:43,354 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:19:43] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:19:44,103 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:19:44] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:19:44,946 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:19:44] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:19:59,344 - root - INFO - Received schedule hello world for message 2018-06-28 15:20:05
+2018-06-28 15:19:59,346 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:19:59] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:21:59,727 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:21:59,818 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:22:00,475 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:22:00,476 - root - INFO - Scheduler started successfully.
+2018-06-28 15:22:00,588 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:22:00,590 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:22:07,158 - root - INFO - Received schedule hello world for message 2018-06-28 15:20:05
+2018-06-28 15:22:07,160 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:22:07] "POST /group/-287606125/message/sdf HTTP/1.1" 400 -
+2018-06-28 15:22:13,369 - root - INFO - Received schedule hello world for message 2018-06-28 15:23:05
+2018-06-28 15:22:13,374 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:22:13] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:22:48,195 - root - INFO - Received schedule hello world for message 2018-06-28 15:28:05
+2018-06-28 15:22:48,197 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:22:48] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:23:26,201 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:23:26,277 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:23:26,975 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:23:26,976 - root - INFO - Scheduler started successfully.
+2018-06-28 15:23:27,072 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:23:27,073 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:23:29,235 - root - INFO - Received schedule hello world for message 2018-06-28 15:28:05
+2018-06-28 15:23:29,258 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:23:29] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:26:04,156 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:26:04,280 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:26:04,907 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:26:04,908 - root - INFO - Scheduler started successfully.
+2018-06-28 15:26:04,995 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:26:04,995 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:26:31,427 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:26:31,514 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:26:32,161 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:26:32,162 - root - INFO - Scheduler started successfully.
+2018-06-28 15:26:32,253 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:26:32,254 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:26:45,841 - root - INFO - Received schedule hello world for message 2018-06-28 15:28:05
+2018-06-28 15:26:45,859 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:26:45] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:32:33,501 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:32:33,584 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:32:34,184 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:32:34,185 - root - INFO - Scheduler started successfully.
+2018-06-28 15:32:34,259 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:32:34,260 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:32:45,113 - root - INFO - Received schedule hello world for message 2018-06-28 15:33:05
+2018-06-28 15:32:45,126 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:32:45] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:33:35,473 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:33:35,562 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:33:36,131 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:33:36,132 - root - INFO - Scheduler started successfully.
+2018-06-28 15:33:36,209 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:33:36,209 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:33:46,297 - root - INFO - Received schedule hello world for message 2018-06-28 15:34:05
+2018-06-28 15:33:46,314 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:33:46] "POST /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:35:14,028 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:35:14,113 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:35:14,876 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:35:14,878 - root - INFO - Scheduler started successfully.
+2018-06-28 15:35:14,977 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:35:14,977 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:35:21,504 - root - INFO - Received schedule hello world for message 2018-06-28 15:36:05
+2018-06-28 15:35:21,634 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 15:35:21,649 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 15:35:21 IST], next run at: 2018-06-28 15:35:21 IST)" (scheduled at 2018-06-28 15:35:21.506772+05:30)
+2018-06-28 15:35:21,890 - apscheduler.scheduler - INFO - Removed job 0b16c4a37fa249e88ab6ea2e3616de36
+2018-06-28 15:35:21,915 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:35:21] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 15:35:23,780 - apscheduler.executors.default - ERROR - Job "Update.send_message (trigger: date[2018-06-28 15:35:21 IST], next run at: 2018-06-28 15:35:21 IST)" raised an exception
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 999, in __call__
+    return self.registry[key]
+KeyError: 139646155613952
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/palash/git/Suveyor/resourcess/update.py", line 133, in send_message
+    message = MessageModel.find_by_id(_id)
+  File "/home/palash/git/Suveyor/models/message.py", line 38, in find_by_id
+    return cls.query.filter_by(id=_id)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 74, in __call__
+    return self.registry()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1001, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2950, in __call__
+    return self.class_(**local_kw)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 141, in __init__
+    self.app = app = db.get_app()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 912, in get_app
+    'No application found. Either work inside a view function or push'
+RuntimeError: No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.
+2018-06-28 15:36:37,559 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 15:36:37,660 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:36:38,364 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:36:38,366 - root - INFO - Scheduler started successfully.
+2018-06-28 15:36:38,473 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:36:38,473 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:36:45,798 - root - INFO - Received schedule hello world for message 2018-06-28 15:37:05
+2018-06-28 15:36:45,935 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 15:36:45,950 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 15:36:45 IST], next run at: 2018-06-28 15:36:45 IST)" (scheduled at 2018-06-28 15:36:45.800239+05:30)
+2018-06-28 15:36:46,097 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:36:46] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 15:36:46,224 - apscheduler.scheduler - INFO - Removed job b2eb0a35653d470ca07d75ed97e1baca
+2018-06-28 15:36:47,963 - apscheduler.executors.default - ERROR - Job "Update.send_message (trigger: date[2018-06-28 15:36:45 IST], next run at: 2018-06-28 15:36:45 IST)" raised an exception
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 999, in __call__
+    return self.registry[key]
+KeyError: 140509195654912
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/palash/git/Suveyor/resourcess/update.py", line 134, in send_message
+    message = MessageModel.find_by_id(_id)
+  File "/home/palash/git/Suveyor/models/message.py", line 38, in find_by_id
+    return cls.query.filter_by(id=_id)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 74, in __call__
+    return self.registry()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1001, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2950, in __call__
+    return self.class_(**local_kw)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 141, in __init__
+    self.app = app = db.get_app()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 912, in get_app
+    'No application found. Either work inside a view function or push'
+RuntimeError: No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.
+2018-06-28 15:39:29,590 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:39:29,686 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:39:30,247 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:39:30,248 - root - INFO - Scheduler started successfully.
+2018-06-28 15:39:30,326 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:39:30,327 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:39:43,551 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:39:43,649 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:39:44,223 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:39:44,223 - root - INFO - Scheduler started successfully.
+2018-06-28 15:39:44,297 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:39:44,297 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:40:37,234 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 15:40:37,357 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:40:37,959 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:40:37,960 - root - INFO - Scheduler started successfully.
+2018-06-28 15:40:38,052 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:40:38,053 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:40:53,761 - root - INFO - Received schedule hello world for message 2018-06-28 15:41:05
+2018-06-28 15:40:53,840 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 15:40:53,850 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 15:40:53 IST], next run at: 2018-06-28 15:40:53 IST)" (scheduled at 2018-06-28 15:40:53.764063+05:30)
+2018-06-28 15:40:53,944 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:40:53] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 15:40:54,062 - apscheduler.scheduler - INFO - Removed job e26eee82287343eba162c93b3d529875
+2018-06-28 15:40:55,591 - apscheduler.executors.default - ERROR - Job "Update.send_message (trigger: date[2018-06-28 15:40:53 IST], next run at: 2018-06-28 15:40:53 IST)" raised an exception
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 999, in __call__
+    return self.registry[key]
+KeyError: 139693374764800
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/palash/git/Suveyor/resourcess/update.py", line 133, in send_message
+    message = MessageModel.find_by_id(_id)
+  File "/home/palash/git/Suveyor/models/message.py", line 38, in find_by_id
+    return cls.query.filter_by(id=_id).first()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 74, in __call__
+    return self.registry()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1001, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2950, in __call__
+    return self.class_(**local_kw)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 141, in __init__
+    self.app = app = db.get_app()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 912, in get_app
+    'No application found. Either work inside a view function or push'
+RuntimeError: No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.
+2018-06-28 15:41:17,829 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/update.py', reloading
+2018-06-28 15:41:17,938 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:41:18,513 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:41:18,516 - root - INFO - Scheduler started successfully.
+2018-06-28 15:41:18,604 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:41:18,604 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:41:27,733 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 15:41:27,823 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:41:28,385 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:41:28,387 - root - INFO - Scheduler started successfully.
+2018-06-28 15:41:28,465 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:41:28,465 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:41:40,030 - root - INFO - Received schedule hello world for message 2018-06-28 15:42:05
+2018-06-28 15:41:40,141 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 15:41:40,150 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 15:41:40 IST], next run at: 2018-06-28 15:41:40 IST)" (scheduled at 2018-06-28 15:41:40.032735+05:30)
+2018-06-28 15:41:40,245 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:41:40] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 15:41:40,352 - apscheduler.scheduler - INFO - Removed job d5699db2d09c42e78fe08c75ac2467e8
+2018-06-28 15:41:41,874 - apscheduler.executors.default - ERROR - Job "Update.send_message (trigger: date[2018-06-28 15:41:40 IST], next run at: 2018-06-28 15:41:40 IST)" raised an exception
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 999, in __call__
+    return self.registry[key]
+KeyError: 139864211191552
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/palash/git/Suveyor/resourcess/update.py", line 133, in send_message
+    message = MessageModel.find_by_id(_id)
+  File "/home/palash/git/Suveyor/models/message.py", line 38, in find_by_id
+    return cls.query.filter_by(id=_id).first()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 74, in __call__
+    return self.registry()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1001, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2950, in __call__
+    return self.class_(**local_kw)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 141, in __init__
+    self.app = app = db.get_app()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 912, in get_app
+    'No application found. Either work inside a view function or push'
+RuntimeError: No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.
+2018-06-28 15:45:44,794 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:45:44] "DELETE /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:45:55,769 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:45:55,892 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:45:56,595 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:45:56,596 - root - INFO - Scheduler started successfully.
+2018-06-28 15:45:56,683 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:45:56,683 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:45:58,104 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:45:58] "DELETE /group/-287606125/message/sdf HTTP/1.1" 500 -
+2018-06-28 15:46:11,949 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:46:12,059 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:46:12,806 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:46:12,808 - root - INFO - Scheduler started successfully.
+2018-06-28 15:46:12,899 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:46:12,900 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:46:13,728 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:46:13] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:46:28,829 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:46:28] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:46:29,750 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:46:29] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:46:30,562 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:46:30] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:46:31,279 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:46:31] "DELETE /group/-287606125/message/sdf HTTP/1.1" 200 -
+2018-06-28 15:47:05,910 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:47:05,989 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:47:06,579 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:47:06,580 - root - INFO - Scheduler started successfully.
+2018-06-28 15:47:06,676 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:47:06,677 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:47:29,007 - root - INFO - Received schedule hello world for message 2018-06-28 15:48:05
+2018-06-28 15:47:29,084 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 15:47:29,094 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 15:47:29 IST], next run at: 2018-06-28 15:47:29 IST)" (scheduled at 2018-06-28 15:47:29.010073+05:30)
+2018-06-28 15:47:29,201 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 15:47:29] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 15:47:29,307 - apscheduler.scheduler - INFO - Removed job 73aa1ad5863b456ba7b273913ada3b9c
+2018-06-28 15:47:31,109 - apscheduler.executors.default - ERROR - Job "Update.send_message (trigger: date[2018-06-28 15:47:29 IST], next run at: 2018-06-28 15:47:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 999, in __call__
+    return self.registry[key]
+KeyError: 139648424101632
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/palash/git/Suveyor/resourcess/update.py", line 133, in send_message
+    message = MessageModel.find_by_id(_id)
+  File "/home/palash/git/Suveyor/models/message.py", line 39, in find_by_id
+    return cls.query.filter_by(id=_id).first()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 74, in __call__
+    return self.registry()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1001, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2950, in __call__
+    return self.class_(**local_kw)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 141, in __init__
+    self.app = app = db.get_app()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 912, in get_app
+    'No application found. Either work inside a view function or push'
+RuntimeError: No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.
+2018-06-28 15:48:35,426 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:48:35,504 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:48:36,125 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:48:36,126 - root - INFO - Scheduler started successfully.
+2018-06-28 15:48:36,201 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:48:36,201 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:51:34,731 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:51:34,808 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:51:35,573 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:51:35,574 - root - INFO - Scheduler started successfully.
+2018-06-28 15:51:35,687 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:51:35,688 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:57:32,728 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/group.py', reloading
+2018-06-28 15:57:32,804 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:57:33,367 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:57:33,368 - root - INFO - Scheduler started successfully.
+2018-06-28 15:57:33,452 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:57:33,453 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:57:39,538 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:57:39,644 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:57:40,282 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:57:40,284 - root - INFO - Scheduler started successfully.
+2018-06-28 15:57:40,365 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:57:40,366 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:58:15,020 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/group.py', reloading
+2018-06-28 15:58:15,096 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:58:15,818 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:58:15,820 - root - INFO - Scheduler started successfully.
+2018-06-28 15:58:15,915 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:58:15,916 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 15:58:17,955 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 15:58:18,080 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 15:58:19,034 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 15:58:19,036 - root - INFO - Scheduler started successfully.
+2018-06-28 15:58:19,142 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 15:58:19,143 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 16:01:40,847 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 16:01:40,946 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 16:01:41,652 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 16:01:41,654 - root - INFO - Scheduler started successfully.
+2018-06-28 16:01:41,737 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 16:01:41,738 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 16:04:33,055 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 16:04:33,132 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 16:04:33,700 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 16:04:33,701 - root - INFO - Scheduler started successfully.
+2018-06-28 16:04:33,779 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 16:04:33,779 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 16:04:55,135 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/resourcess/message.py', reloading
+2018-06-28 16:04:55,221 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 16:04:55,883 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 16:04:55,884 - root - INFO - Scheduler started successfully.
+2018-06-28 16:04:55,980 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 16:04:55,981 - werkzeug - INFO -  * Debugger PIN: 229-186-406
+2018-06-28 16:06:35,128 - root - INFO - Received schedule hello world for message 2018-06-28 16:7:05
+2018-06-28 16:06:35,229 - apscheduler.scheduler - INFO - Added job "Update.send_message" to job store "default"
+2018-06-28 16:06:35,241 - apscheduler.executors.default - INFO - Running job "Update.send_message (trigger: date[2018-06-28 16:06:35 IST], next run at: 2018-06-28 16:06:35 IST)" (scheduled at 2018-06-28 16:06:35.130860+05:30)
+2018-06-28 16:06:35,311 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2018 16:06:35] "POST /group/-287606125/message/sdf HTTP/1.1" 201 -
+2018-06-28 16:06:35,429 - apscheduler.scheduler - INFO - Removed job f8387967432c4624b106e31152944a49
+2018-06-28 16:06:36,874 - apscheduler.executors.default - ERROR - Job "Update.send_message (trigger: date[2018-06-28 16:06:35 IST], next run at: 2018-06-28 16:06:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 999, in __call__
+    return self.registry[key]
+KeyError: 140696248506112
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/palash/git/Suveyor/resourcess/update.py", line 133, in send_message
+    message = MessageModel.find_by_id(_id)
+  File "/home/palash/git/Suveyor/models/message.py", line 39, in find_by_id
+    return cls.query.filter_by(id=_id)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 74, in __call__
+    return self.registry()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1001, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2950, in __call__
+    return self.class_(**local_kw)
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 141, in __init__
+    self.app = app = db.get_app()
+  File "/home/palash/anaconda3/envs/telegram/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 912, in get_app
+    'No application found. Either work inside a view function or push'
+RuntimeError: No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.
+2018-06-28 16:08:56,616 - werkzeug - INFO -  * Detected change in '/home/palash/git/Suveyor/models/message.py', reloading
+2018-06-28 16:08:56,719 - werkzeug - INFO -  * Restarting with stat
+2018-06-28 16:08:57,274 - apscheduler.scheduler - INFO - Scheduler started
+2018-06-28 16:08:57,275 - root - INFO - Scheduler started successfully.
+2018-06-28 16:08:57,349 - werkzeug - WARNING -  * Debugger is active!
+2018-06-28 16:08:57,350 - werkzeug - INFO -  * Debugger PIN: 229-186-406

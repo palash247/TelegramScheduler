@@ -5,6 +5,9 @@ from security import authenticate, identity
 from resourcess.group import Group, GroupList
 from resourcess.message import Message, MessageList
 from resourcess.update import Update
+import os
+
+TOKEN = os.environ.get('TELEGRAM_TOKEN')
 
 app = Flask(__name__)
 app.secret_key = 'palash'
@@ -21,11 +24,11 @@ def create_tables():
 
 JWT(app, authenticate, identity)
 
-api.add_resource(Group, '/group/<int:chat_id>')
+api.add_resource(Group, '/group/<string:chat_id>')
 api.add_resource(GroupList, '/groups')
-api.add_resource(Message, '/group/<int:chat_id>/message/<string:name>')
-api.add_resource(MessageList, '/group/<int:chat_id>/messages')
-api.add_resource(Update, '/593812672:AAE_77FAMjFoISjwvsWt_XSy5MkMQ8Smsvs')
+api.add_resource(Message, '/group/<string:chat_id>/message/<string:name>')
+api.add_resource(MessageList, '/group/<string:chat_id>/messages')
+api.add_resource(Update, '/{}'.format(TOKEN))
 
 if __name__ == '__main__':
     from db import db

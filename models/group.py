@@ -8,7 +8,7 @@ class GroupModel(db.Model):
     name = db.Column('name', db.String(80))
     chat_id = db.Column('chat_id', db.Integer, unique=True)
     time_zone = db.Column('time_zone', db.String(80))
-    messages = db.relationship('MessageModel', lazy='dynamic')
+    messages = db.relationship('models.message.MessageModel', lazy='dynamic')
 
     def __init__(self, name, chat_id, time_zone):
         self.name = name
@@ -24,7 +24,7 @@ class GroupModel(db.Model):
         }
 
     @classmethod
-    def find_by_name(cls, chat_id):
+    def find_by_chat_id(cls, chat_id):
         return cls.query.filter_by(chat_id=chat_id).first()
 
     def save_to_db(self):
