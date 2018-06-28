@@ -6,9 +6,9 @@ import logging
 from apscheduler.schedulers.background import BackgroundScheduler
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO, filename='log/schedules.log')
+    level=logging.DEBUG)
 
-logger = logging.getLogger()
+logger = logging.getLogger('schedules')
 
 scheduler = BackgroundScheduler()
 url = 'sqlite:///surveyor.db'

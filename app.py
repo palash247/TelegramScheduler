@@ -3,7 +3,7 @@ from flask_jwt import JWT, jwt_required
 from flask_restful import Api, Resource, reqparse
 from security import authenticate, identity
 from resourcess.group import Group, GroupList
-from resourcess.message import Message, MessageList
+from resourcess.message import Message, MessageList, MessageId
 from resourcess.update import Update
 import os
 
@@ -29,6 +29,7 @@ api.add_resource(GroupList, '/groups')
 api.add_resource(Message, '/group/<string:chat_id>/message/<string:name>')
 api.add_resource(MessageList, '/group/<string:chat_id>/messages')
 api.add_resource(Update, '/{}'.format(TOKEN))
+api.add_resource(MessageId, '/group/<string:chat_id>/message/id/<string:id>')
 
 if __name__ == '__main__':
     from db import db

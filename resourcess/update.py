@@ -5,11 +5,12 @@ from models.group import GroupModel
 import logging
 import os
 from models.message import MessageModel
+from resourcess.message import MessageId
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level = logging.INFO, filename = 'log/updates.log')
+    level=logging.DEBUG)
 
-logger = logging.getLogger()
+logger = logging.getLogger('updates')
 
 BOT_USERNAME = "ConsumerSurveyorBot"
 NEW_CHAT_PARTICIPANT = "new_chat_participant"
@@ -129,10 +130,7 @@ class Update(Resource):
         url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
         cls.get_url(url)
         if _id is not None:
-            print(_id)
-            message = MessageModel.find_by_id(_id)
-            print(message)
-            message.delete_from_db()
+            requests.delete('http://localhost:5000/group/{}/message/id/{}'.format(chat_id,_id))
 
     @classmethod
     def get_url(cls, url):

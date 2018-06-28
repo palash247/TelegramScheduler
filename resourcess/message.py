@@ -2,6 +2,7 @@
 import sys
 import os
 import datetime
+import traceback
 from dateutil.parser import parse
 from apscheduler.job import Job
 from scheduler import scheduler
@@ -13,9 +14,9 @@ import logging
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO, filename='log/messages.log')
+    level=logging.DEBUG)
 
-logger = logging.getLogger()
+logger = logging.getLogger('messages')
 
 
 class Message(Resource):
@@ -61,21 +62,23 @@ class Message(Resource):
         try:
             _id = Job(scheduler).id
             from resourcess.update import Update
-            job = scheduler.add_job(
+            scheduler.add_job(
                 id = _id,
                 func=Update.send_message,
+                run_date=request_data['schedule'],
                 trigger='date',
                 args=[request_data['text'], int(chat_id), _id]
                 )
             # if unable to add to job to scheduler don't add it to messages.
             message = MessageModel(
-                _id=job.id,
+                id=_id,
                 name=name,
                 chat_id=int(chat_id),
                 **request_data
                 )
             message.save_to_db()
-        except:
+        except Exception as e:
+            logger.error(traceback.format_exc())
             return {'message': 'Failed to insert message'}, 500
         return message.json(), 201
 
@@ -87,7 +90,7 @@ class Message(Resource):
         )
         if message:
             try:
-                message.delete_from_db()
+                [msg.delete_from_db() for msg in message]
                 return {'message': 'message deleted successfully'}
             except:
                 return {'message': 'unable to delete the message'}, 500
@@ -113,3 +116,24 @@ class MessageList(Resource):
         if messages:
             return list(map(lambda x: x.json(), messages))
         return {'message': 'The chat_id does not exist.'}, 404
+
+class MessageId(Resource):
+
+    
+    def get(self, chat_id, id):
+        message = MessageModel.find_by_id(_id = id, chat_id = chat_id)
+        if message:
+            return message.json()
+        return {'message': 'No scheduled message found for id {}'.format(id)}, 404
+
+
+    def delete(self, chat_id, id):
+        message = MessageModel.find_by_id(_id=id, chat_id=chat_id)
+        if message:
+            try:
+                message.delete_from_db()
+                return {'message':'Scheduled message successfully deleted.'}
+            except:
+                return {'message': 'Unable to delete the message'}
+        return {'message': 'No scheduled message found for id {}'.format(id)}, 400
+

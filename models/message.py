@@ -4,7 +4,7 @@ class MessageModel(db.Model):
 
     __tablename__ = "messages"
 
-    _id = db.Column('id', db.VARCHAR(119), primary_key=True)
+    id = db.Column('id', db.VARCHAR(119), primary_key=True)
     name = db.Column('name', db.String())
     text = db.Column('text', db.String())
     schedule = db.Column('schedule', db.String())
@@ -15,8 +15,8 @@ class MessageModel(db.Model):
     )
     group = db.relationship('GroupModel')
 
-    def __init__(self, _id, name, text, schedule, chat_id):
-        self.id = _id
+    def __init__(self, id, name, text, schedule, chat_id):
+        self.id = id
         self.name = name
         self.text = text
         self.schedule = schedule
@@ -34,8 +34,8 @@ class MessageModel(db.Model):
         return cls.query.filter_by(chat_id=chat_id)
 
     @classmethod
-    def find_by_id(cls, _id):
-        return cls.query.filter_by(id=_id)
+    def find_by_id(cls,chat_id, _id):
+        return cls.query.filter_by(id=_id, chat_id=chat_id).first()
 
     def save_to_db(self):
         db.session.add(self)
