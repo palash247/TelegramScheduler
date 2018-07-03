@@ -126,11 +126,9 @@ class Update(Resource):
         pass
 
     @classmethod
-    def send_message(cls, text, chat_id, _id=None):
+    def send_message(cls, text, chat_id):
         url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
         cls.get_url(url)
-        if _id is not None:
-            requests.delete('http://localhost:5000/group/{}/message/id/{}'.format(chat_id,_id))
 
     @classmethod
     def get_url(cls, url):

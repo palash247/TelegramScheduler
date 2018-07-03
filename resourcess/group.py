@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from models.group import GroupModel
+from flask import render_template
 
 
 class Group(Resource):
