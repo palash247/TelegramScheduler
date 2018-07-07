@@ -4,6 +4,7 @@
 <body>
 
     <table border=1>
+        {% if groups %}
         <tr>
             <th> Group Id </th>
             <th> Group Name </th>
@@ -11,6 +12,9 @@
             <th> Message Content</th>
             <th> Schedule </th>
         </tr>
+        {%else%}
+        <p>It seems you don't have any messages scheduled for any group.</p>
+        {% endif%}
         {% for group in groups %}
             {% for message in group['messages'] %}
 
