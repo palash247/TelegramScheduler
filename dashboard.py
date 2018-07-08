@@ -11,6 +11,7 @@ from dateutil.parser import parse
 from models.message import MessageModel
 from apscheduler.job import Job
 from scheduler import scheduler
+import pytz
 
 bp = Blueprint('dashboard', __name__)
 
@@ -62,17 +63,17 @@ def add_schedule():
     if request.method == 'POST':
 
         error = None
-        schedule = parse(request.form['schedule'])
-        if schedule < datetime.datetime.now():
+        schedule = parse(request.form['schedule']+'+05:30')
+        if schedule < datetime.datetime.now(pytz.timezone('Asia/Kolkata')):
             error = 'You can not schedule a message in past'
         if error is not None:
             flash(error)
         else:
                 
             job = schedule_msg(request.form['text'],
-                            parse(request.form['schedule']), request.form['chat_id'])
+                            schedule, request.form['chat_id'])
             message = MessageModel(
-                job.id, request.form['name'], request.form['text'], request.form['schedule'], request.form['chat_id']   )
+                job.id, request.form['name'], request.form['text'], request.form['schedule']+'+05:30', request.form['chat_id']   )
             message.save_to_db()
             return redirect(url_for('dashboard.index')) 
     return render_template('dashboard/add_schedule.html')
@@ -90,9 +91,9 @@ def update(chat_id,id):
         return render_template('dashboard/update.html', message = message, group_name=group.name)
     if request.method == "POST":
         chat_id = int(chat_id)
-        schedule = parse(request.form['schedule'])
+        schedule = parse(request.form['schedule']+'+05:30')
         error = None
-        if schedule < datetime.datetime.now():
+        if schedule < datetime.datetime.now(pytz.timezone('Asia/Kolkata')):
             error = 'You can not schedule a message in past'
         if error:
             flash(error)
@@ -101,10 +102,10 @@ def update(chat_id,id):
             _id=id, chat_id=chat_id)
         if job and message:
             schedule_msg(
-                request.form['text'], parse(request.form['schedule']), chat_id, job)
+                request.form['text'], schedule, chat_id, job)
             message.name = request.form['name']
             message.text = request.form['text']
-            message.schedule = request.form['schedule']
+            message.schedule = request.form['schedule']+'+05:30'
             message.save_to_db()
             return redirect(url_for('dashboard.index'))
     return render_template('dashboard/schedules.html')

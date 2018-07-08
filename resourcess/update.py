@@ -6,10 +6,8 @@ import logging
 import os
 from models.message import MessageModel
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.DEBUG)
-
-logger = logging.getLogger('updates')
+    format='[%(asctime)s] %(levelname)s in %(module)s: %(message)s')
+logger = logging.getLogger()
 
 BOT_USERNAME = "ConsumerSurveyorBot"
 NEW_CHAT_PARTICIPANT = "new_chat_participant"
