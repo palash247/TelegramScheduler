@@ -27,7 +27,10 @@ app.secret_key = 'palash'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///surveyor.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
-
+import auth
+app.register_blueprint(auth.bp)
+import dashboard
+app.register_blueprint(dashboard.bp)
 
 api = Api(app)
 
@@ -38,8 +41,4 @@ api.add_resource(Update, '/{}'.format(TOKEN))
 if __name__ == '__main__':
     from db import db
     db.init_app(app)
-    import auth
-    app.register_blueprint(auth.bp)
-    import dashboard
-    app.register_blueprint(dashboard.bp)
     app.run(port=5000)
