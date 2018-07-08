@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Edit message titled {{ message['name'] }} of group {{ group_name}}{% endblock %}</h1>
+{% endblock %} {% block content %}
+<form method="post">
+    <label for="title">Title</label>
+    <input name="name" id="title" value="{{ request.form['name'] or message['name'] }}" required>
+    <label for="schedule">Schedule</label>
+    <input name="schedule" id="schedule" type="datetime" value="{{ request.form['schedule'] or message['schedule'] }}" required>
+    <label for="text">Message</label>
+    <textarea name="text" id="text">{{ request.form['text'] or message['text'] }}</textarea>
+    <input type="submit" value="Save">
+</form>
+<hr>
+<form action="{{ url_for('dashboard.delete', id=message['id'], chat_id=message['chat_id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+</form>
+{% endblock %}

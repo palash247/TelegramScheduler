@@ -5,7 +5,6 @@ from models.group import GroupModel
 import logging
 import os
 from models.message import MessageModel
-from resourcess.message import MessageId
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.DEBUG)
@@ -24,25 +23,19 @@ MESSAGE = 'message'
 PRIVATE = 'private'
 TYPE = 'type'
 NEW_CHAT_TITLE = 'new_chat_title'
-COMMANDS = [
-    '/list-groups',
-    '/list-schedules',
-    '/add-schedule',
-    '/confirm-schedule'
-    '/remove-schedule',
-    '/update-schedule',
-    '/auth'
-]
 TOKEN = os.environ.get('TELEGRAM_TOKEN')
+
+
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 class Update(Resource):
 
     def post(self):
         data = request.get_json()
-        print (data)
         if self._is_added(data):
-            # add new group to db
+            """
+            Add new group to DB
+            """
             group = GroupModel.find_by_chat_id(data[MESSAGE][CHAT][ID])
             if group:
                 logger.info('Group already exists in the database')
@@ -63,9 +56,6 @@ class Update(Resource):
             else:
                 logger.warning('Delete executed on a group which does not exist in the database.')
         
-        if self._is_private(data):
-            if self._is_command(data):
-                pass
 
         if self._is_title_changed(data):
             group = GroupModel.find_by_chat_id(data[MESSAGE][CHAT][ID])
@@ -77,27 +67,14 @@ class Update(Resource):
                 logger.error('Failed to update Group title to {}'.format(
                     data[MESSAGE][CHAT][NEW_CHAT_TITLE]))
 
-        
-            
-
-    def _is_private(self,data):
-        if PRIVATE == data[MESSAGE][CHAT][TYPE]:
-            return True
-        return False
-
-    def _is_command(self,text):
-        if text in COMMANDS: 
-            return True 
-        else: 
-            return False
-
     def _is_added(self, data):
         """ 
         Returns True if added to new group, False otherwise.
         """
         if NEW_CHAT_PARTICIPANT in data[MESSAGE]:
-            if BOT_USERNAME == data[MESSAGE][NEW_CHAT_PARTICIPANT][USERNAME]:
-                return True
+            if USERNAME in data[MESSAGE][NEW_CHAT_PARTICIPANT]:
+                if BOT_USERNAME == data[MESSAGE][NEW_CHAT_PARTICIPANT][USERNAME]:
+                    return True 
         return False
 
     def _is_removed(self, data):
@@ -106,8 +83,9 @@ class Update(Resource):
         """
 
         if LEFT_CHAT_PARTICIPANT in data[MESSAGE]:
-            if BOT_USERNAME in data[MESSAGE][LEFT_CHAT_PARTICIPANT][USERNAME]:
-                return True
+            if USERNAME in data[MESSAGE][LEFT_CHAT_PARTICIPANT]:
+                if BOT_USERNAME in data[MESSAGE][LEFT_CHAT_PARTICIPANT][USERNAME]:
+                    return True
         return False
 
     def _is_title_changed(self, data):
@@ -118,12 +96,6 @@ class Update(Resource):
             return True
         return False
 
-    def _execute_command(self, command):
-        if command == '/add-schedule':
-            pass
-
-    def add_schedule(self):
-        pass
 
     @classmethod
     def send_message(cls, text, chat_id):

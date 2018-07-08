@@ -1,4 +1,5 @@
 import functools
+from models.user import User
 
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
@@ -31,9 +32,7 @@ def load_logged_in_user():
     if user_id is None:
         g.user = None
     else:
-        g.user = db.execute(
-            'SELECT * FROM user WHERE id = ?', (user_id,)
-        ).fetchone()
+        g.user = User.get_by_id(user_id)
 
 
 @bp.route('/register', methods=('GET', 'POST'))
@@ -52,19 +51,15 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        elif db.execute(
-            'SELECT id FROM user WHERE username = ?', (username,)
-        ).fetchone() is not None:
+        elif User.is_available(username):
+            print(User.is_available(username))
             error = 'User {0} is already registered.'.format(username)
 
         if error is None:
             # the name is available, store it in the database and go to
             # the login page
-            db.engine.execute(
-                text('INSERT INTO user (username, password) VALUES (?, ?)',
-                (username, generate_password_hash(password)))
-            )
-            db.commit()
+            user = User(username, generate_password_hash(password))
+            user.create_user()
             return redirect(url_for('auth.login'))
 
         flash(error)
@@ -79,20 +74,18 @@ def login():
         username = request.form['username']
         password = request.form['password']
         error = None
-        user = db.engine.execute(
-            text('SELECT * FROM user WHERE username = ?', (username,))
-        ).fetchone()
+        user = User.is_available(username)
 
         if user is None:
             error = 'Incorrect username.'
-        elif not check_password_hash(user['password'], password):
+        elif not check_password_hash(user.password, password):
             error = 'Incorrect password.'
 
         if error is None:
             # store the user id in a new session and return to the index
             session.clear()
-            session['user_id'] = user['id']
-            return redirect(url_for('index'))
+            session['user_id'] = user.id
+            return redirect(url_for('dashboard.index'))
 
         flash(error)
 
@@ -103,4 +96,4 @@ def login():
 def logout():
     """Clear the current session, including the stored user id."""
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('dashboard.index'))
