@@ -37,7 +37,7 @@ def create_table():
     from db import db
     db.create_all()
     db.session.execute(
-        'create trigger if not exists after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
+        'create trigger after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
     db.session.execute(
         'create table if not exists user(id integer primary key autoincrement, username text unique not null, password not null)')
     import auth
