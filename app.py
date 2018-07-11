@@ -24,13 +24,11 @@ TOKEN = os.environ.get('TELEGRAM_TOKEN')
 
 app = Flask(__name__)
 app.secret_key = 'palash'
+print(os.environ.get('DATABASE_URL', 'sqlite:///surveyor.db'))
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///surveyor.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
-import auth
-app.register_blueprint(auth.bp)
-import dashboard
-app.register_blueprint(dashboard.bp)
+
 
 api = Api(app)
 
@@ -40,6 +38,12 @@ def create_table():
     db.create_all()
     db.session.execute(
         'create trigger if not exists after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
+    db.session.execute(
+        'create table if not exists user(id integer primary key autoincrement, username text unique not null, password not null)')
+    import auth
+    app.register_blueprint(auth.bp)
+    import dashboard
+    app.register_blueprint(dashboard.bp)
     db.session.commit()
     db.session.close()
 
