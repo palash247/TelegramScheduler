@@ -5,7 +5,6 @@ import os
 from logging.config import dictConfig
 from sqlalchemy import DDL, event
 from models.schedule import ScheduleModel
-from scheduler import scheduler
 
 dictConfig({
     'version': 1,
