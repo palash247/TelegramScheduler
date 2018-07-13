@@ -5,6 +5,7 @@ import os
 from logging.config import dictConfig
 from sqlalchemy import DDL, event
 from models.schedule import ScheduleModel
+from scheduler import scheduler
 
 dictConfig({
     'version': 1,
@@ -26,8 +27,7 @@ TOKEN = os.environ.get('TELEGRAM_TOKEN')
 
 app = Flask(__name__)
 app.secret_key = 'palash'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    'LITE_DATABASE_URL','sqlite:///surveyor.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///surveyor.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 
@@ -35,17 +35,17 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
 
 
-# @app.before_first_request
-# def create_table():
-#     db.create_all()
-#     db.session.execute(
-#         'create trigger if not exists after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
-#     import auth
-#     app.register_blueprint(auth.bp)
-#     import dashboard
-#     app.register_blueprint(dashboard.bp)
-#     db.session.commit()
-#     db.session.close()
+@app.before_first_request
+def create_table():
+    db.create_all()
+    db.session.execute(
+        'create trigger if not exists after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
+    import auth
+    app.register_blueprint(auth.bp)
+    import dashboard
+    app.register_blueprint(dashboard.bp)
+    db.session.commit()
+    db.session.close()
     
 
 
