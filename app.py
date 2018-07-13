@@ -35,17 +35,18 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
 
 
-@app.before_first_request
-def create_table():
-    db.create_all()
-    db.session.execute(
-        'create trigger if not exists after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
-    import auth
-    app.register_blueprint(auth.bp)
-    import dashboard
-    app.register_blueprint(dashboard.bp)
-    db.session.commit()
-    db.session.close()
+# @app.before_first_request
+# def create_table():
+#     from db import db
+#     db.create_all()
+#     db.session.execute(
+#         'create trigger if not exists after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
+#     import auth
+#     app.register_blueprint(auth.bp)
+#     import dashboard
+#     app.register_blueprint(dashboard.bp)
+#     db.session.commit()
+#     db.session.close()
     
 
 
