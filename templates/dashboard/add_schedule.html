@@ -18,7 +18,6 @@
     <input name="schedule" id="schedule" type="datetime-local" value="{{request.form['schedule']}}">
     <input type="submit" value="Save">
      {%else%}
-    <p>It seems you have not added the <b>@ConsumerSurveyorBot</b> to any telegram group/channel. Please, add the the bot to any group to schedule the message for the same.</p>
     {% endif%}
 </form>
 {% endblock %}
