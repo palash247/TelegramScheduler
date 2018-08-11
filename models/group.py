@@ -3,12 +3,13 @@ from db import db
 
 class GroupModel(db.Model):
     __tablename__ = 'groups'
+    
 
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
     name = db.Column('name', db.String(80))
     chat_id = db.Column('chat_id', db.Integer, unique=True)
     time_zone = db.Column('time_zone', db.String(80))
-    messages = db.relationship('models.message.MessageModel', lazy='dynamic')
+    messages = db.relationship('MessageModel', lazy='dynamic')
 
     def __init__(self, name, chat_id, time_zone):
         self.name = name

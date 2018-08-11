@@ -1,12 +1,11 @@
 import functools
-from models.user import User
+from models.user import UserModel
 
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from db import db
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -28,11 +27,11 @@ def load_logged_in_user():
     """If a user id is stored in the session, load the user object from
     the database into ``g.user``."""
     user_id = session.get('user_id')
-
     if user_id is None:
         g.user = None
     else:
-        g.user = User.get_by_id(user_id)
+        g.user = UserModel.get_by_id(user_id)
+        
 
 
 @bp.route('/register', methods=('GET', 'POST'))
@@ -51,14 +50,14 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        elif User.is_available(username):
-            print(User.is_available(username))
+        elif UserModel.is_available(username):
+            print(UserModel.is_available(username))
             error = 'User {0} is already registered.'.format(username)
 
         if error is None:
             # the name is available, store it in the database and go to
             # the login page
-            user = User(username, generate_password_hash(password))
+            user = UserModel(username, generate_password_hash(password))
             user.create_user()
             return redirect(url_for('auth.login'))
 
@@ -74,7 +73,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         error = None
-        user = User.is_available(username)
+        user = UserModel.is_available(username)
 
         if user is None:
             error = 'Incorrect username.'

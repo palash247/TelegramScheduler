@@ -4,7 +4,7 @@ class MessageModel(db.Model):
 
     __tablename__ = "messages"
 
-    id = db.Column('id', db.VARCHAR(119), primary_key=True)
+    id = db.Column('id', db.String(119),primary_key=True)
     name = db.Column('name', db.String())
     text = db.Column('text', db.String())
     schedule = db.Column('schedule', db.String())
@@ -14,6 +14,7 @@ class MessageModel(db.Model):
         db.ForeignKey('groups.chat_id')
     )
     group = db.relationship('GroupModel')
+    
 
     def __init__(self, id, name, text, schedule, chat_id):
         self.id = id

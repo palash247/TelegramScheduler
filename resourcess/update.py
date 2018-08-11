@@ -5,6 +5,8 @@ from models.group import GroupModel
 import logging
 import os
 from models.message import MessageModel
+from models.schedule import ScheduleModel
+from models.user import UserModel
 logging.basicConfig(
     format='[%(asctime)s] %(levelname)s in %(module)s: %(message)s')
 logger = logging.getLogger()
