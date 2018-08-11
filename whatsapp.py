@@ -33,7 +33,7 @@ class WhatsApp:
     # This constructor will load all the emojies present in the json file and it will initialize the webdriver
     def __init__(self, wait, screenshot=None):
         self.browser = webdriver.Chrome(
-            executable_path='./chromedriver', options=self.options)
+            executable_path='chromedriver', options=self.options)
         self.browser.get("https://web.whatsapp.com/")
         # emoji.json is a json file which contains all the emojis
         with open("emoji.json") as emojies:
@@ -41,7 +41,7 @@ class WhatsApp:
             self.emoji = json.load(emojies)
         WebDriverWait(self.browser, wait).until(EC.presence_of_element_located(
             (By.XPATH, '//*[@id="side"]/div[2]/div/label/input')))
-        if screenshot is not None:
+        if screenshot:
             # This will save the screenshot to the specified file location
             self.browser.save_screenshot(screenshot)
 
