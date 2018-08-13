@@ -14,6 +14,11 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
 import pyautogui
+from models.whatsapp import WhatsAppModel
+from models.group import GroupModel
+import logging
+
+logger = logging.getLogger(__name__)
 
 pyautogui.PAUSE = 1
 
@@ -32,9 +37,15 @@ class WhatsApp:
 
     # This constructor will load all the emojies present in the json file and it will initialize the webdriver
     def __init__(self, wait, screenshot=None):
-        self.browser = webdriver.Chrome(
-            executable_path='chromedriver', options=self.options)
+        self.browser = webdriver.Chrome(executable_path='./chromedriver', options=self.options,)
         self.browser.get("https://web.whatsapp.com/")
+        session_open = None
+        try:
+            session_open = self.browser.find_element_by_xpath(
+            "//DIV[@class='_1WZqU PNlAR xh-highlight'][text()='Use Here']")
+            session_open.click()
+        except NoSuchElementException:
+            logger.info('No session is opened up right now. Opening new one.')
         # emoji.json is a json file which contains all the emojis
         with open("emoji.json") as emojies:
             # This will load the emojies present in the json file into the dict
@@ -44,6 +55,65 @@ class WhatsApp:
         if screenshot:
             # This will save the screenshot to the specified file location
             self.browser.save_screenshot(screenshot)
+
+    def check_update(self):
+        WebDriverWait(self.browser, 50).until(EC.presence_of_element_located(
+            (By.XPATH, "//DIV[@id='pane-side']//DIV[@class='_3j7s9']")))
+        chats = self.browser.find_elements_by_xpath(
+            "//DIV[@id='pane-side']//DIV[@class='_3j7s9']")
+        for chat in chats   :
+            chat.click()
+            WebDriverWait(self.browser, 50).until(EC.presence_of_element_located(
+                (By.CLASS_NAME, '_3AwwN')))
+            # collect name of the group
+            group_name = self.browser.find_element_by_xpath(
+                "//HEADER[@class='_3AwwN']//SPAN[@dir='auto']")
+            # whatsapp_group = WhatsAppModel.find_by_name(group_name)
+            # check the membership 
+            is_removed = None
+            try:
+                is_removed = self.browser.find_element_by_xpath(
+                    "//DIV[@class='_2XiC1']")
+            except NoSuchElementException:
+                logger.info('No one removed bot from group.')
+            if is_removed:
+                # if whatsapp_group:
+                #     whatsapp_group.delete_from_db()
+                self.browser.find_element_by_xpath(
+                    "(//SPAN[@data-icon='menu'])[2]"
+                ).click()
+                self.browser.find_element_by_xpath(
+                    "//DIV[@class='_3lSL5 _2dGjP'][text()='Delete group']"
+                ).click()
+                self.browser.find_element_by_xpath(
+                    "//DIV[@class='_1WZqU PNlAR'][text()='Delete']"
+                ).click()
+                try:
+                    self.browser.find_element_by_xpath(
+                        "//DIV[@class='_3I_df']"
+                    ).click()
+                    self.browser.find_element_by_xpath(
+                        "//DIV[@class='_1WZqU PNlAR'][text()='Clear']"
+                    ).click()
+                except:
+                    logger.info('')
+                continue
+            # if whatsapp_group:
+            #     continue
+            self.browser.find_element_by_class_name('_3AwwN').click()
+            WebDriverWait(self.browser, 50).until(EC.presence_of_element_located(
+                (By.CLASS_NAME, '_1xGbt')))
+            chat_type = self.browser.find_element_by_class_name('_1xGbt').text
+            if chat_type == 'Group info':
+                # check if the bot is member of the group or not. if new membership
+                # is found add the the membership to the database. if removal of 
+                # membership is noticed then reflect the same on the database.
+                logger.info('new group found')
+                # group_model = GroupModel('whatsapp',group_identifier=group_name)
+                # group_model.save_to_db()
+                # group_fk = group_model.id
+                # whatsapp_group = WhatsAppModel(group_name,group_fk)
+                # whatsapp_group.save_to_db()
 
     # This method is used to send the message to the individual person or a group
     # will return true if the message has been sent, false else
@@ -80,7 +150,7 @@ class WhatsApp:
         # it is handled safely
         try:
             click_menu = WebDriverWait(self.browser, self.timeout).until(EC.presence_of_element_located(
-                (By.XPATH, "/html/body/div/div/div/div[3]/div/header/div[2]/div[1]/div/span")))
+                (By.XPATH, "//INPUT[@type='text']")))
             click_menu.click()
         except TimeoutException:
             raise TimeoutError(
@@ -256,3 +326,6 @@ class WhatsApp:
     # This method is used to quit the browser
     def quit(self):
         self.browser.quit()
+
+
+whatsapp = WhatsApp(50)

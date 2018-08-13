@@ -6,37 +6,36 @@ class MessageModel(db.Model):
 
     id = db.Column('id', db.String(119),primary_key=True)
     name = db.Column('name', db.String())
-    text = db.Column('text', db.String())
+    message = db.Column('message', db.String())
     schedule = db.Column('schedule', db.String())
-    chat_id = db.Column(
-        'chat_id',
+    group_id = db.Column(
+        'group_id',
         db.Integer,
-        db.ForeignKey('groups.chat_id')
+        db.ForeignKey('groups.id')
     )
     group = db.relationship('GroupModel')
     
-
-    def __init__(self, id, name, text, schedule, chat_id):
+    def __init__(self, id, name, message, schedule, group_id):
         self.id = id
         self.name = name
-        self.text = text
+        self.message = message
         self.schedule = schedule
-        self.chat_id = chat_id
+        self.group_id = group_id
 
     def json(self):
-        return {'id':self.id, 'name': self.name, 'text': self.text, 'schedule': self.schedule}
+        return {'id': self.id, 'name': self.name, 'message': self.message, 'schedule': self.schedule, 'group_id': self.group_id }
 
     @classmethod
-    def find_by_name_and_chat_id(cls, name, chat_id):
-        return cls.query.filter_by(name=name, chat_id=chat_id).first()
+    def find_by_name_and_group_id(cls, name, group_id):
+        return cls.query.filter_by(name=name, group_id=group_id).first()
 
     @classmethod
-    def find_by_chat_id(cls, chat_id):
-        return cls.query.filter_by(chat_id=chat_id)
+    def find_by_chat_id(cls, group_id):
+        return cls.query.filter_by(group_id=group_id).all()
 
     @classmethod
-    def find_by_id(cls,chat_id, _id):
-        return cls.query.filter_by(id=_id, chat_id=chat_id).first()
+    def find_by_id(cls, group_id, _id):
+        return cls.query.filter_by(id=_id, group_id=group_id).first()
 
     def save_to_db(self):
         db.session.add(self)

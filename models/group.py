@@ -6,27 +6,25 @@ class GroupModel(db.Model):
     
 
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column('name', db.String(80))
-    chat_id = db.Column('chat_id', db.Integer, unique=True)
-    time_zone = db.Column('time_zone', db.String(80))
+    channel_name = db.Column('channel_name', db.String())
+    group_identifier = db.Column('group_identifier', db.String())
     messages = db.relationship('MessageModel', lazy='dynamic')
+    whatsapp = db.relationship('WhatsAppModel', lazy='dynamic')
+    telegram = db.relationship('TelegramModel',lazy='dynamic')
 
-    def __init__(self, name, chat_id, time_zone):
-        self.name = name
-        self.chat_id = chat_id
-        self.time_zone = time_zone
+    def __init__(self, channel_name, group_identifier):
+        self.channel_name = channel_name
+        self.group_identifier = group_identifier
 
     def json(self):
         return {
-            'name': self.name,
-            'chat_id': self.chat_id,
-            'time_zone': self.time_zone,
+            'channel': self.whatsapp.json() if self.channel_name=='whatsapp' else self.telegram.json(),
             'messages': list(map(lambda x: x.json(), self.messages.all()))
         }
 
     @classmethod
-    def find_by_chat_id(cls, chat_id):
-        return cls.query.filter_by(chat_id=chat_id).first()
+    def find_by_group_identifier(cls, group_identifier):
+        return cls.query.filter_by(group_identifier=group_identifier).first()
 
     def save_to_db(self):
         db.session.add(self)

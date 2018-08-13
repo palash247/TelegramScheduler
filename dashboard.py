@@ -9,9 +9,12 @@ from models.group import GroupModel
 import datetime
 from dateutil.parser import parse
 from models.message import MessageModel
+from models.whatsapp import WhatsAppModel
+from models.telegram import TelegramModel
 from apscheduler.job import Job
 from scheduler import scheduler
 import pytz
+from whatsapp import whatsapp
 
 bp = Blueprint('dashboard', __name__)
 
@@ -53,10 +56,11 @@ def index():
 def add_schedule():
     """ Schedule a message for a group """
     if request.method == 'GET':
+        whatsapp.check_update()
         groups = list(map(lambda x: x.json(), GroupModel.query.all()))
         if len(groups) == 0 :
-            print('lalalalala')
-            flash("It seems you have not added the @ConsumerSurveyorBot to any telegram group/channel. Please, add the the bot to any group to schedule the message for the same.")
+            
+            flash("It seems you have not added the @ConsumerSurveyorBot to any group of any channel. Please, add the the bot to any group to schedule the message for the same.")
             return redirect(url_for('dashboard.index'))
         return render_template('dashboard/add_schedule.html', groups = groups)
 
@@ -70,10 +74,10 @@ def add_schedule():
             flash(error)
         else:
                 
-            job = schedule_msg(request.form['text'],
-                            schedule, request.form['chat_id'])
-            message = MessageModel(
-                job.id, request.form['name'], request.form['text'], request.form['schedule']+'+05:30', request.form['chat_id']   )
+            job = schedule_msg(request.form['message'],
+                            schedule, request.form['group_id'])
+            message = MessageModel( 
+                job.id, request.form['name'], request.form['message'], request.form['schedule']+'+05:30', request.form['group_id']   )
             message.save_to_db()
             return redirect(url_for('dashboard.index')) 
     return render_template('dashboard/add_schedule.html')
@@ -99,7 +103,7 @@ def update(chat_id,id):
             flash(error)
         job = scheduler.get_job(id)
         message = MessageModel.find_by_id(
-            _id=id, chat_id=chat_id)
+            _id=id, group_id=chat_id)
         if job and message:
             schedule_msg(
                 request.form['text'], schedule, chat_id, job)
