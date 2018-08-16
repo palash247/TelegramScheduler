@@ -57,7 +57,13 @@ def create_table():
     db.session.execute(
         'create trigger if not exists after delete on groups BEGIN delete from whatsapp where group_fk = old.id; END;'
     )
-    
+    db.session.execute(
+        'create trigger if not exists after delete on whatsapp BEGIN delete from groups where id=old.group_fk; END;'
+    )
+    db.session.execute(
+        'create trigger if not exists after delete on telegram BEGIN delete from groups where id=old.group_fk; END;'
+    )
+
     db.session.commit()
     db.session.close()
     

@@ -7,6 +7,7 @@ import os
 from models.message import MessageModel
 from models.schedule import ScheduleModel
 from models.user import UserModel
+from models.telegram import TelegramModel
 logging.basicConfig(
     format='[%(asctime)s] %(levelname)s in %(module)s: %(message)s')
 logger = logging.getLogger()
@@ -36,11 +37,14 @@ class Update(Resource):
             """
             Add new group to DB
             """
-            group = GroupModel.find_by_chat_id(data[MESSAGE][CHAT][ID])
+            telegram_group = TelegramModel.find_by_group_chat_id(
+                data[MESSAGE][CHAT][ID])
+            group = GroupModel.find_by_id(telegram_group.group_fk)
             if group:
                 logger.info('Group already exists in the database')
                 return None
-            group = GroupModel(data[MESSAGE][CHAT][TITLE],data[MESSAGE][CHAT][ID],TIME_ZONE)
+            group = GroupModel(data[MESSAGE][CHAT][TITLE],data[MESSAGE][CHAT][ID])
+            telegram = Telegram
             try:
                 group.save_to_db()
                 logger.info('Group added to database')
@@ -98,7 +102,7 @@ class Update(Resource):
 
 
     @classmethod
-    def send_message(cls, text, chat_id):
+    def telegram_send_message(cls, text, chat_id):
         url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
         cls.get_url(url)
 
@@ -107,5 +111,38 @@ class Update(Resource):
         response = requests.get(url)
         content = response.content.decode("utf8")
         return content
+
+    # This method is used to send the message to the individual person or a group
+    # will return true if the message has been sent, false else
+
+    @classmethod
+    def whatsapp_send_message(cls, name, message):
+        # this will emojify all the emoji which is present as the text in string
+        from whatsapp import whatsapp
+        import time
+        from selenium.webdriver.support.ui import WebDriverWait
+        from selenium.common.exceptions import NoSuchElementException
+        from selenium.common.exceptions import TimeoutException
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.common.keys import Keys
+        message = whatsapp.emojify(message)
+        search = whatsapp.browser.find_element_by_xpath(
+            '/html/body/div[1]/div/div/div[2]/div/div[2]/div/label/input')
+        # we will send the name to the input key box
+        search.send_keys(name+Keys.ENTER)
+        current_time = time.time()
+        try:
+            send_msg = WebDriverWait(whatsapp.browser, whatsapp.timeout).until(EC.presence_of_element_located(
+                (By.XPATH, "/html/body/div/div/div/div[3]/div/footer/div[1]/div[2]/div/div[2]")))
+            send_msg.send_keys(message+Keys.ENTER)  # send the message
+            return True
+        except TimeoutException:
+            raise TimeoutError(
+                "Your request has been timed out! Try overriding timeout!")
+        except NoSuchElementException:
+            return False
+        except Exception:
+            return False
+            
         
-    

@@ -4,14 +4,14 @@
 <form method="post">
      {% if groups %}
      <label for='group'>Group</label>
-    <select name="chat_id" id='group' required>
+    <select name="group_id" id='group' required>
         <option value="">Select Group</option>
         {%for group in groups%}
-        <option value={{group['chat_id']}}>{{group['name']}}</option>
+        <option value={{group['channel']['group_fk']}}>{{group['channel']['channel_name'] +": " +group['channel']['group_name']}}</option>
         {%endfor%}
     </select>
     <label for='message'>Message</label>
-    <textarea name='text' id='message' type='text' required> {{ request.form['text'] }}</textarea>
+    <textarea name='message' id='message' type='text' required> {{ request.form['message'] }}</textarea>
     <label for="title">Title</label>
     <input name="name" id="title" value="{{ request.form['name'] }}" required>
     <label for="schedule">Schedule</label>

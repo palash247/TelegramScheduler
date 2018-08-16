@@ -2,14 +2,15 @@
 <h1>{% block title %}Schedules{% endblock %}</h1>
 {% if g.user %}
 <a class="action" href="{{ url_for('dashboard.add_schedule') }}">New</a>
+<a class="action" href="{{ url_for('dashboard.refresh_whatsapp') }}">Refresh WhatsApp groups</a>
 {% endif %} {% endblock %} {%block content %} {% for group in groups %}
 <article class="post">
     <header>
         <div>
             <h1>Channel: {{group['channel']['channel_name']}}</h1>
-            <h1>Group Name: {{ group['group_name'] }}</h1>
+            <h1>Group Name: {{ group['channel']['group_name'] }}</h1>
             {% if group['channel']['channel_name']=='telegram' %}
-            <h2>Group Id: {{ group['channel']['group_chat_id']}}</h2>
+            <h2>Group Id: {{ group['channel']['group_id']}}</h2>
             {% endif %}
         </div>
 
@@ -17,8 +18,8 @@
     <div>
         {% for message in group['messages']%}
         <div class="about">The message is scheduled on: {{message['schedule']}}</div>
-        <a class="action" href="{{ url_for('dashboard.update', id=message['id'],group_id=group['group_id'])}}">Edit</a>
-        <p class="body">{{ message['text'] }}</p>
+        <a class="action" href="{{ url_for('dashboard.update', id=message['id'],group_id=message['group_id'])}}">Edit</a>
+        <p class="body">{{ message['message'] }}</p>
     </div>{% if not loop.last %}
     <hr> {% endif %} {% endfor%}
 </article>

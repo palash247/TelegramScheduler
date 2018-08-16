@@ -22,12 +22,21 @@ bp = Blueprint('dashboard', __name__)
 def delete_schedule(job):
         job.remove()
 
-def schedule_msg(text, schedule, chat_id, job=None):
+def schedule_msg(text, schedule, group_id, job=None):
     from resourcess.update import Update
+    group = GroupModel.find_by_id(group_id).json()
+    func = None
+    args = None
+    if group['channel']['channel_name'] == 'telegram':
+        func = Update.telegram_send_message
+        args = [text, int(group['channel']['group_chat_id'])]
+    if group['channel']['channel_name'] == 'whatsapp':
+        func = Update.whatsapp_send_message
+        args = [group['channel']['group_name'], text]
     if job:
         job.modify(
-            func=Update.send_message,
-            args=[text, int(chat_id)]
+            func=func,
+            args=args
         )
         if schedule != job.next_run_time:
             job.reschedule(trigger='date',run_date=schedule )
@@ -36,10 +45,10 @@ def schedule_msg(text, schedule, chat_id, job=None):
         _id = Job(scheduler).id
         job = scheduler.add_job(
             id=_id,
-            func=Update.send_message,
+            func=func,
             run_date=schedule,
             trigger='date',
-            args=[text, int(chat_id)]
+            args=args
         )
         return job
 
@@ -56,7 +65,6 @@ def index():
 def add_schedule():
     """ Schedule a message for a group """
     if request.method == 'GET':
-        whatsapp.check_update()
         groups = list(map(lambda x: x.json(), GroupModel.query.all()))
         if len(groups) == 0 :
             
@@ -73,7 +81,7 @@ def add_schedule():
         if error is not None:
             flash(error)
         else:
-                
+            print(request.form)
             job = schedule_msg(request.form['message'],
                             schedule, request.form['group_id'])
             message = MessageModel( 
@@ -83,18 +91,18 @@ def add_schedule():
     return render_template('dashboard/add_schedule.html')
 
 
-@bp.route('/update/<string:chat_id>/<string:id>', methods=('GET', 'POST'))
+@bp.route('/update/<string:group_id>/<string:id>', methods=['GET','POST'])
 @login_required
-def update(chat_id,id):
+def update(group_id,id):
     if request.method == 'GET':
-        message = MessageModel.find_by_id(chat_id, id)
+        message = MessageModel.find_by_id(_id=id, group_id=group_id)
         if message is None:
             flash('The scheduled message is already executed or does not exists.')
             return redirect(url_for('dashboard.index'))
-        group = GroupModel.find_by_chat_id(chat_id=chat_id)
-        return render_template('dashboard/update.html', message = message, group_name=group.name)
+        group = GroupModel.find_by_id(group_id).json()
+        return render_template('dashboard/update.html', message = message, group_name=group['channel']['group_name'])
     if request.method == "POST":
-        chat_id = int(chat_id)
+        group_id = int(group_id)
         schedule = parse(request.form['schedule']+'+05:30')
         error = None
         if schedule < datetime.datetime.now(pytz.timezone('Asia/Kolkata')):
@@ -102,23 +110,22 @@ def update(chat_id,id):
         if error:
             flash(error)
         job = scheduler.get_job(id)
-        message = MessageModel.find_by_id(
-            _id=id, group_id=chat_id)
+        message = MessageModel.find_by_id(_id=id, group_id=group_id)
         if job and message:
             schedule_msg(
-                request.form['text'], schedule, chat_id, job)
+                request.form['message'], schedule, group_id, job)
             message.name = request.form['name']
-            message.text = request.form['text']
+            message.message = request.form['message']
             message.schedule = request.form['schedule']+'+05:30'
             message.save_to_db()
             return redirect(url_for('dashboard.index'))
     return render_template('dashboard/schedules.html')
 
 
-@bp.route('/update/<string:chat_id>/<string:id>', methods=( 'POST',))
+@bp.route('/update/<string:group_id>/<string:id>', methods=( 'POST','GET'))
 @login_required
 def delete():
-    message = MessageModel.find_by_id(_id=request.form['id'], chat_id=request.form['chat_id'])
+    message = MessageModel.find_by_id(_id=request.form['id'], group_id=request.form['group_id'])
     job = scheduler.get_job(request.form['id'])
     if message and job:
         try:
@@ -128,3 +135,10 @@ def delete():
         except:
             flash('Unable to delete the message')
     flash('No scheduled message found for id {}'.format(request.form['id']))
+
+
+@bp.route('/refresh_whatsapp', methods=('GET', 'POST'))
+@login_required
+def refresh_whatsapp():
+    whatsapp.check_update()
+    return redirect('/')

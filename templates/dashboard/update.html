@@ -7,11 +7,11 @@
     <label for="schedule">Schedule</label>
     <input name="schedule" id="schedule" type="datetime" value="{{ request.form['schedule'] or message['schedule'] }}" required>
     <label for="text">Message</label>
-    <textarea name="text" id="text">{{ request.form['text'] or message['text'] }}</textarea>
+    <textarea name="message" id="text">{{ request.form['message'] or message['message'] }}</textarea>
     <input type="submit" value="Save">
 </form>
 <hr>
-<form action="{{ url_for('dashboard.delete', id=message['id'], chat_id=message['chat_id']) }}" method="post">
+<form action="{{ url_for('dashboard.delete', id=message['id'], group_id=message['group_id']) }}" method="post">
     <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
 </form>
 {% endblock %}
