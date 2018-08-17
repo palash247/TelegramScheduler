@@ -34,17 +34,6 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
 
 
-# @app.before_first_request
-# def create_table():
-#     db.create_all()
-#     db.session.execute(
-#         'create trigger if not exists after delete on apscheduler_jobs BEGIN delete from messages where id=old.id; END;')
-#     import auth
-#     app.register_blueprint(auth.bp)
-#     import dashboard
-#     app.register_blueprint(dashboard.bp)
-#     db.session.commit()
-#     db.session.close()
 @app.before_first_request
 def create_table():
     db.create_all()
@@ -63,12 +52,9 @@ def create_table():
     db.session.execute(
         'create trigger if not exists after delete on telegram BEGIN delete from groups where id=old.group_fk; END;'
     )
-
     db.session.commit()
     db.session.close()
     
-
-
 api.add_resource(Update, '/{}'.format(TOKEN))
 
 

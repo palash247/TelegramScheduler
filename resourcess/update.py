@@ -44,26 +44,32 @@ class Update(Resource):
                 logger.info('Group already exists in the database')
                 return None
             group = GroupModel(data[MESSAGE][CHAT][TITLE],data[MESSAGE][CHAT][ID])
-            telegram = Telegram
+            telegram = TelegramModel(
+                data[MESSAGE][CHAT][ID], data[MESSAGE][CHAT][TITLE],group.id)
             try:
                 group.save_to_db()
+                telegram.save_to_db()
                 logger.info('Group added to database')
             except:
                 logger.error('unable to add group to database')
         
         if self._is_removed(data):
             # remove group from db
-            group = GroupModel.find_by_chat_id(data[MESSAGE][CHAT][ID])
+            telegram_group = TelegramModel.find_by_group_chat_id(
+                data[MESSAGE][CHAT][ID])
+            group = GroupModel.find_by_id(telegram_group.group_fk)
             if group:
                 group.delete_from_db()
+                telegram_group.delete_from_db()
                 logger.info('Group successfully deleted from database')
             else:
                 logger.warning('Delete executed on a group which does not exist in the database.')
         
 
         if self._is_title_changed(data):
-            group = GroupModel.find_by_chat_id(data[MESSAGE][CHAT][ID])
-            group.name = data[MESSAGE][CHAT][NEW_CHAT_TITLE]
+            telegram_group = TelegramModel.find_by_group_chat_id(
+                data[MESSAGE][CHAT][ID])
+            telegram_group.group_name = data[MESSAGE][CHAT][NEW_CHAT_TITLE]
             try:
                 group.save_to_db()
                 logger.info('Group title updated.')
