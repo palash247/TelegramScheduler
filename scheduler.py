@@ -11,7 +11,7 @@ logging.basicConfig(
 logger = logging.getLogger('schedules')
 
 scheduler = BackgroundScheduler()
-url = 'sqlite:///surveyor.db'
+url = 'sqlite:////home/palash/surveyor.db'
 scheduler.add_jobstore('sqlalchemy', url=url)
 try:
     scheduler.start()

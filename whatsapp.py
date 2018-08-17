@@ -31,7 +31,8 @@ class WhatsApp:
     # we are using chrome as our webbrowser
     options = webdriver.ChromeOptions()
     options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--headless")
+    #  options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--user-data-dir=/home/palash/.config/google-chrome")
     timeout = 10  # The timeout is set for about ten seconds
 
